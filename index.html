@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Time Master Pro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button id="theme-toggle">🌙</button>
+  <div class="background-icons"></div>
+  <div class="container">
+    <h1>🕒 Time Master Pro</h1>
+
+    <div class="mode-buttons">
+      <button onclick="switchMode('stopwatch')">Stopwatch</button>
+      <button onclick="switchMode('timer')">Timer</button>
+      <button onclick="switchMode('clock')">Clock</button>
+    </div>
+
+    <!-- Stopwatch -->
+    <div id="stopwatch" class="section">
+      <div id="sw-display" class="display">00:00:00</div>
+      <div class="buttons">
+        <button id="sw-start" onclick="startPauseStopwatch()">Start</button>
+        <button onclick="resetStopwatch()">Reset</button>
+        <button onclick="lapStopwatch()">Lap</button>
+      </div>
+      <div id="sw-laps" class="lap-list"></div>
+    </div>
+
+    <!-- Timer -->
+    <div id="timer" class="section hidden">
+      <div class="timer-input">
+        <input type="number" id="min" placeholder="MM"> :
+        <input type="number" id="sec" placeholder="SS">
+      </div>
+      <div id="timer-display" class="display">00:00</div>
+      <div class="buttons">
+        <button onclick="startPauseTimer()" id="timer-btn">Start</button>
+        <button onclick="resetTimer()">Reset</button>
+      </div>
+    </div>
+
+    <!-- Clock -->
+    <div id="clock" class="section hidden">
+      <div id="clock-display" class="display"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
